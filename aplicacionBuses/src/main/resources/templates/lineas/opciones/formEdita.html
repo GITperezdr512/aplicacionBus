@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicación del bus</title>
+</head>
+<body>
+    <h1>Editando</h1>
+    <form method="post" th:action="@{/lineas/editar/submit}" th:object="${lineaForm}">
+        <input type="hidden" th:field="*{idlinea}" />
+        <label>Denominación corta: </label><input type="text" th:field="*{denCorta}" />
+        <label>Denominación larga: </label><input type="text" th:field="*{denLarga}" />
+        <input type="submit" value="Editar línea" />
+    </form>
+</body>
+</html>

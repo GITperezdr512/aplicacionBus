@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicación del bus</title>
+</head>
+
+<body>
+    <h1>Lista de paradas de la linea</h1>
+    <table>
+        <thead>
+            <th>Parada</th>
+            <th></th>
+        </thead>
+        <tbody>
+            <tr th:each="paradas : ${listaParadas}">
+                <td th:text="${paradas.parada.denominacion}"></td>
+            </tr>
+        </tbody>
+    </table>
+    <form th:action="@{/lineasParadas/insertar}">
+        <label>Nombre de parada: </label>
+        <select name="parada" th:each="paradas : ${paradasFaltan}"></select>
+        <option></option>
+    </form>
+</body>
+
+</html>

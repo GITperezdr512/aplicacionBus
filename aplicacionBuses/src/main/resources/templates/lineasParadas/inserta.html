@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicación del bus</title>
+</head>
+
+<body>
+    <h1>Agregar una línea a una parada</h1>
+    <form th:action="@{/lineasParadas/submit}" th:object="${lineaParada}">
+        <label>Nombre de parada</label><input th:field="lineaParada.">
+    </form>
+</body>
+
+</html>
