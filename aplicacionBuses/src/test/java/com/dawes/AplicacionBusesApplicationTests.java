@@ -32,6 +32,7 @@ public class AplicacionBusesApplicationTests {
 	@Test
 	public void test02() {
 		ps.save(new ParadaVO(0, "Tanatorio"));
+		ps.save(new ParadaVO(0, "Funciona"));
 	}
 	
 	@Test

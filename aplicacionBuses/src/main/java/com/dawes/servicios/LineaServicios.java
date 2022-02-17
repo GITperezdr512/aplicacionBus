@@ -1,8 +1,10 @@
 package com.dawes.servicios;
 
+import java.util.List;
 import java.util.Optional;
 
 import com.dawes.modelo.LineaVO;
+import com.dawes.modelo.ParadaVO;
 
 public interface LineaServicios {
 
@@ -29,5 +31,9 @@ public interface LineaServicios {
 	void deleteAll(Iterable<? extends LineaVO> entities);
 
 	void deleteAll();
+	
+	List<ParadaVO> paradasDeLinea(LineaVO linea);
+	
+	List<ParadaVO> paradasNoDeLinea(LineaVO linea);
 
 }

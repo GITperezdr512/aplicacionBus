@@ -17,14 +17,18 @@
         </thead>
         <tbody>
             <tr th:each="paradas : ${listaParadas}">
-                <td th:text="${paradas.parada.denominacion}"></td>
+                <td th:text="${paradas.denominacion}"></td>
             </tr>
         </tbody>
     </table>
+    <br>
     <form th:action="@{/lineasParadas/insertar}">
         <label>Nombre de parada: </label>
-        <select name="parada" th:each="paradas : ${paradasFaltan}"></select>
-        <option></option>
+        <select>
+            <option  th:each="paradas : ${paradasFaltan}" th:text="${paradas.denominacion}">
+            </option>
+        </select>
+        <button type="submit"></button>
     </form>
 </body>
 

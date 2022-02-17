@@ -1,11 +1,13 @@
 package com.dawes.serviciosImpl;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.dawes.modelo.LineaVO;
+import com.dawes.modelo.ParadaVO;
 import com.dawes.repository.LineaRepository;
 import com.dawes.servicios.LineaServicios;
 
@@ -72,6 +74,16 @@ public class LineaServiciosImpl implements LineaServicios {
 	@Override
 	public void deleteAll() {
 		lr.deleteAll();
+	}
+
+	@Override
+	public List<ParadaVO> paradasDeLinea(LineaVO linea) {
+		return lr.paradasDeLinea(linea);
+	}
+
+	@Override
+	public List<ParadaVO> paradasNoDeLinea(LineaVO linea) {
+		return lr.paradasNoDeLinea(linea);
 	}
 	
 	

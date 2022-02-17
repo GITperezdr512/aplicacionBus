@@ -19,7 +19,7 @@ public class LineaParadaController {
 	public String unirLineaParada(@PathVariable int idLinea, Model model) {
 		model.addAttribute("lineaParadas", new LineaParadaVO(ls.findById(idLinea).get()));
 		
-		return "lineasParadas/inserta";
+		return "/lineas/paradas/{id}";
 	}
 	
 	
