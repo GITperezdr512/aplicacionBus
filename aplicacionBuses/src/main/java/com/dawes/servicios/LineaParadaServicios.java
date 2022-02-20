@@ -3,6 +3,8 @@ package com.dawes.servicios;
 import java.util.Optional;
 
 import com.dawes.modelo.LineaParadaVO;
+import com.dawes.modelo.LineaVO;
+import com.dawes.modelo.ParadaVO;
 
 public interface LineaParadaServicios {
 
@@ -30,4 +32,5 @@ public interface LineaParadaServicios {
 
 	void deleteAll();
 
+	Optional<LineaParadaVO> findByLineaAndParada(LineaVO linea, ParadaVO parada);
 }

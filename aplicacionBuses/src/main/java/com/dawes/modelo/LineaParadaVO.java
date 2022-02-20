@@ -34,9 +34,14 @@ public class LineaParadaVO {
 	@ManyToOne
 	private ParadaVO parada;
 	
-	public LineaParadaVO(LineaVO linea) {
+	public LineaParadaVO(LineaVO linea, ParadaVO parada) {
+		this.idlineaparada = 0;
+		this.fecha = LocalDate.now();
 		this.linea = linea;
+		this.parada = parada;
 	}
+	
+	
 	
 	
 }

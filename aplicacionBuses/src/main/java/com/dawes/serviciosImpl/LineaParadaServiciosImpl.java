@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.dawes.modelo.LineaParadaVO;
+import com.dawes.modelo.LineaVO;
+import com.dawes.modelo.ParadaVO;
 import com.dawes.repository.LineaParadaRepository;
 import com.dawes.servicios.LineaParadaServicios;
 
@@ -72,6 +74,11 @@ public class LineaParadaServiciosImpl implements LineaParadaServicios {
 	@Override
 	public void deleteAll() {
 		lrr.deleteAll();
+	}
+
+	@Override
+	public Optional<LineaParadaVO> findByLineaAndParada(LineaVO linea, ParadaVO parada) {
+		return lrr.findByLineaAndParada(linea, parada);
 	}
 
 }

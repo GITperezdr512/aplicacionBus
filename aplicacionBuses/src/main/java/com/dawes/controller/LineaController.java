@@ -72,9 +72,8 @@ public class LineaController {
 	public String verParadas(@PathVariable int id, Model model) {
 		
 		model.addAttribute("listaParadas", ls.paradasDeLinea(ls.findById(id).get()));
-//		model.addAttribute("paradasFaltan", ls.paradasDeLinea(ls.findById(id).get()));
-
 		model.addAttribute("paradasFaltan", ls.paradasNoDeLinea(ls.findById(id).get()));
+		model.addAttribute("idLinea", id);
 		
 		return "lineas/opciones/lista";
 	}

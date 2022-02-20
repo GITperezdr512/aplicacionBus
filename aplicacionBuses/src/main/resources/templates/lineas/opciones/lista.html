@@ -13,22 +13,23 @@
     <table>
         <thead>
             <th>Parada</th>
-            <th></th>
+            <th>Eliminar</th>
         </thead>
         <tbody>
             <tr th:each="paradas : ${listaParadas}">
                 <td th:text="${paradas.denominacion}"></td>
+                <td><a th:href="@{/lineasParadas/eliminar/{idLinea}(idLinea=${idLinea}, idParada=${paradas.idparada})}">Eliminar</a></td>
             </tr>
         </tbody>
     </table>
     <br>
-    <form th:action="@{/lineasParadas/insertar}">
+    <form th:action="@{/lineasParadas/insertar/{id}(id = ${idLinea})}">
         <label>Nombre de parada: </label>
-        <select>
-            <option  th:each="paradas : ${paradasFaltan}" th:text="${paradas.denominacion}">
+        <select th:name="parada">
+            <option  th:each="paradas : ${paradasFaltan}" th:text="${paradas.denominacion}" th:value="${paradas.idparada}">
             </option>
         </select>
-        <button type="submit"></button>
+        <input type="submit" value="Añadir parada"/>
     </form>
 </body>
 
