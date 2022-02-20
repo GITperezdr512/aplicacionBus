@@ -1,0 +1,15 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0px;
+}
+
+th, td {
+    font-size: 1.4em;
+    border-bottom: 2px solid black;
+    height: 50px;
+}
+
+td:nth-child(3), td:nth-child(4), td:nth-child(5) {
+    text-align: center;
+}

@@ -5,36 +5,50 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./css/estiloPaginas.css" type="text/css" rel="stylesheet">
+    <link href="./css/estiloAdmin.css" type="text/css" rel="stylesheet">
+    <link href="./css/estiloTablas.css" type="text/css" rel="stylesheet">
+    <link href="./css/estiloIconos.css" type="text/css" rel="stylesheet">
+    <link href="./css/all.css" type="text/css" rel="stylesheet">
     <title>Aplicación del bus</title>
 </head>
-
 <body>
-    <table>
-        <thead>
-            <th>Denominación Corta</th>
-            <th>Denominación Larga</th>
-            <th>Editar</th>
-            <th>Borrar</th>
-        </thead>
-        <tbody>
-            <tr th:each="linea : ${listaLineas}">
-                <td th:text="${linea.denCorta}"></td>
-                <td th:text="${linea.denLarga}"></td>
-                <td>
-                    <a th:href="@{/lineas/editar/{id}(id=${linea.idlinea})}">Editar</a>
-                </td>
-                <td>
-                    <a th:href="@{/lineas/eliminar/{id}(id=${linea.idlinea})}">Eliminar</a>
-                </td>
-                <td>
-                    <a th:href="@{lineas/paradas/{id}(id=${linea.idlinea})}">Ver paradas</a>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <span class="boton">
-        <a href="/lineas/insertar">Insertar una nueva línea</a>
-    </span>
+    <div class="supercontenedor">
+        <div class="contenedor">
+            <h1>
+                Administración de las líneas
+            </h1>
+            <table>
+                <thead>
+                    <th>Denominación Corta</th>
+                    <th>Denominación Larga</th>
+                    <th>Editar</th>
+                    <th>Borrar</th>
+                    <th>Ver paradas</th>
+                </thead>
+                <tbody>
+                    <tr th:each="linea : ${listaLineas}">
+                        <td th:text="${linea.denCorta}"></td>
+                        <td th:text="${linea.denLarga}"></td>
+                        <td>
+                            <a th:href="@{/lineas/editar/{id}(id=${linea.idlinea})}"><i class="fa-solid fa-screwdriver-wrench"></i></a>
+                        </td>
+                        <td>
+                            <a th:href="@{/lineas/eliminar/{id}(id=${linea.idlinea})}"><i class="fa-solid fa-trash-can"></i></a>
+                        </td>
+                        <td>
+                            <a th:href="@{lineas/paradas/{id}(id=${linea.idlinea})}"><i class="fa-solid fa-list-ol"></i></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <a href="/lineas/insertar">
+                <div class="boton">
+                    Insertar una nueva línea
+                </div>
+            </a>
+        </div>
+    </div>
 </body>
 
 </html>

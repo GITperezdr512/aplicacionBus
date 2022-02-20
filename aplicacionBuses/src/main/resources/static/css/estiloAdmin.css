@@ -1,0 +1,23 @@
+body {
+    padding-top: 20vh;
+}
+
+.supercontenedor {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.contenedor {
+    width: 60vw;
+}
+
+.boton {
+    height: 40px;
+    width: 250px;
+    background-color: black;
+    text-align: center;
+    font-size: 1.3em;
+    padding-top: 7px;
+}
