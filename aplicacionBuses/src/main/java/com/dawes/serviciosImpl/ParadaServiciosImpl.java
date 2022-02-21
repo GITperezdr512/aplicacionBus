@@ -3,6 +3,7 @@ package com.dawes.serviciosImpl;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
 import com.dawes.modelo.ParadaVO;
@@ -16,7 +17,11 @@ public class ParadaServiciosImpl implements ParadaServicios {
 
 	@Override
 	public <S extends ParadaVO> S save(S entity) {
-		return pr.save(entity);
+		try {
+			return pr.save(entity);
+		} catch (DataIntegrityViolationException e) {
+			return entity;
+		}
 	}
 
 	@Override
@@ -51,7 +56,11 @@ public class ParadaServiciosImpl implements ParadaServicios {
 
 	@Override
 	public void deleteById(Integer id) {
-		pr.deleteById(id);
+		try {
+			pr.deleteById(id);
+		} catch(DataIntegrityViolationException e) {
+
+		}
 	}
 
 	@Override

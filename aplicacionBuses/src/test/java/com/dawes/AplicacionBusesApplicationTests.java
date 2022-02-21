@@ -38,6 +38,7 @@ public class AplicacionBusesApplicationTests {
 		lps.save(new LineaParadaVO(0, LocalDate.now(), ls.findById(2).get(), ps.findById(1).get()));
 		lps.save(new LineaParadaVO(0, LocalDate.now(), ls.findById(2).get(), ps.findById(2).get()));
 		lps.save(new LineaParadaVO(0, LocalDate.now(), ls.findById(3).get(), ps.findById(1).get()));
+		ps.deleteById(2);
 	}
 
 }

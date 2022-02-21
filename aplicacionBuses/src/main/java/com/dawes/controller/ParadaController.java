@@ -56,6 +56,6 @@ public class ParadaController {
 	@RequestMapping("/eliminar/{id}")
 	public String eliminar(@PathVariable int id, Model model) {
 		ps.deleteById(id);
-		return "redirect:/lineas";
+		return "redirect:/paradas";
 	}
 }

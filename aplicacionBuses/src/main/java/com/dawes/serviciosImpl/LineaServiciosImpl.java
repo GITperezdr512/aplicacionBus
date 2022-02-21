@@ -3,7 +3,9 @@ package com.dawes.serviciosImpl;
 import java.util.List;
 import java.util.Optional;
 
+import org.hibernate.exception.ConstraintViolationException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
 import com.dawes.modelo.LineaVO;
@@ -18,7 +20,13 @@ public class LineaServiciosImpl implements LineaServicios {
 
 	@Override
 	public <S extends LineaVO> S save(S entity) {
-		return lr.save(entity);
+		try {
+			return lr.save(entity);
+		} catch (DataIntegrityViolationException e) {
+			return entity;
+		}
+
+
 	}
 
 	@Override
