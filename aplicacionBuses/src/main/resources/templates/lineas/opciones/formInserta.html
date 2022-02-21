@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="./css/estiloPaginas.css" type="text/css" rel="stylesheet">
-    <link href="./css/estiloAdmin.css" type="text/css" rel="stylesheet">
+    <link href="./../css/estiloPaginas.css" type="text/css" rel="stylesheet">
+    <link href="./../css/estiloAdmin.css" type="text/css" rel="stylesheet">
+    <link href="./../css/estiloForm.css" type="text/css" rel="stylesheet">
     <title>Aplicación del bus</title>
 </head>
 <body>
@@ -13,10 +14,15 @@
         <div class="contenedor">
             <h1>Nueva línea</h1>
             <form method="post" th:action="@{/lineas/insertar/submit}" th:object="${lineaForm}">
-                <label>Denominación corta: </label><input type="text" th:field="*{denCorta}" />
-                <label>Denominación larga: </label><input type="text" th:field="*{denLarga}" />
+                <div class="row"><label>Denominación corta: </label><input type="text" th:field="*{denCorta}" /></div>
+                <div class="row"><label>Denominación larga: </label><input type="text" th:field="*{denLarga}" /></div>
                 <input type="submit" value="Nueva línea" />
             </form>
+            <a href="/lineas">
+                <div class="boton">
+                    Volver
+                </div>
+            </a>
         </div>
     </div>
 </body>

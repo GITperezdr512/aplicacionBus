@@ -5,32 +5,52 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./../../css/estiloPaginas.css" type="text/css" rel="stylesheet">
+    <link href="./../../css/estiloAdmin.css" type="text/css" rel="stylesheet">
+    <link href="./../../css/estiloTablas.css" type="text/css" rel="stylesheet">
+    <link href="./../../css/estiloForm.css" type="text/css" rel="stylesheet">
+    <link href="./../../css/all.css" type="text/css" rel="stylesheet">
     <title>Aplicación del bus</title>
+    <style>
+        td:nth-child(2) {
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Lista de paradas de la linea</h1>
-    <table>
-        <thead>
-            <th>Parada</th>
-            <th>Eliminar</th>
-        </thead>
-        <tbody>
-            <tr th:each="paradas : ${listaParadas}">
-                <td th:text="${paradas.denominacion}"></td>
-                <td><a th:href="@{/lineasParadas/eliminar/{idLinea}(idLinea=${idLinea}, idParada=${paradas.idparada})}">Eliminar</a></td>
-            </tr>
-        </tbody>
-    </table>
-    <br>
-    <form th:action="@{/lineasParadas/insertar/{id}(id = ${idLinea})}">
-        <label>Nombre de parada: </label>
-        <select th:name="parada">
-            <option  th:each="paradas : ${paradasFaltan}" th:text="${paradas.denominacion}" th:value="${paradas.idparada}">
-            </option>
-        </select>
-        <input type="submit" value="Añadir parada"/>
-    </form>
+    <div class="supercontenedor">
+        <div class="contenedor">
+            <h1>Lista de paradas de la linea</h1>
+            <table>
+                <thead>
+                    <th>Parada</th>
+                    <th>Eliminar</th>
+                </thead>
+                <tbody>
+                    <tr th:each="paradas : ${listaParadas}">
+                        <td th:text="${paradas.denominacion}"></td>
+                        <td><a th:href="@{/lineasParadas/eliminar/{idLinea}(idLinea=${idLinea}, idParada=${paradas.idparada})}"><i class="fa-solid fa-trash-can"></i></a></td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <form th:action="@{/lineasParadas/insertar/{id}(id = ${idLinea})}">
+                <div class="row"><label>Nombre de parada: </label>
+                    <select th:name="parada">
+                        <option  th:each="paradas : ${paradasFaltan}" th:text="${paradas.denominacion}" th:value="${paradas.idparada}">
+                        </option>
+                    </select>
+                </div>
+                <input type="submit" value="Añadir parada"/>
+            </form>
+            <a href="/lineas">
+                <div class="boton">
+                    Volver
+                </div>
+            </a>
+        </div>
+    </div>
 </body>
 
 </html>

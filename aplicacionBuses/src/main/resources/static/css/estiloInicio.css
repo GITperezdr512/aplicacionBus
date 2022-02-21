@@ -15,7 +15,7 @@
     width: 250px;
 }
 
-.boton {
+.botonGrande {
     height: 120px;
     width: 450px;
     background-color: black;
@@ -23,4 +23,14 @@
     padding-top: 20px;
     font-size: 2em;
     line-height: 70px;
+}
+
+.boton {
+    height: 40px;
+    width: 250px;
+    background-color: black;
+    text-align: center;
+    font-size: 1.3em;
+    padding-top: 7px;
+    margin-top: 10px;
 }

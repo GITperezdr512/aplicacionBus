@@ -5,31 +5,50 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./css/estiloPaginas.css" type="text/css" rel="stylesheet">
+    <link href="./css/estiloAdmin.css" type="text/css" rel="stylesheet">
+    <link href="./css/estiloTablas.css" type="text/css" rel="stylesheet">
+    <link href="./css/estiloIconos.css" type="text/css" rel="stylesheet">
+    <link href="./css/all.css" type="text/css" rel="stylesheet">
     <title>Aplicación del bus</title>
+    <style>
+        td:nth-child(2) {
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body>
-    <table>
-        <thead>
-            <th>Denominación</th>
-            <th>Editar</th>
-            <th>Borrar</th>
-        </thead>
-        <tbody>
-            <tr th:each="parada : ${listaParadas}">
-                <td th:text="${parada.denominacion}"></td>
-                <td>
-                    <a th:href="@{/paradas/editar/{id}(id=${parada.idparada})}">Editar</a>
-                </td>
-                <td>
-                    <a th:href="@{/paradas/eliminar/{id}(id=${parada.idparada})}">Eliminar</a>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <span class="boton">
-        <a href="/paradas/insertar">Insertar una nueva parada</a>
-    </span>
+    <div class="supercontenedor">
+        <div class="contenedor">
+            <table>
+                <thead>
+                    <th>Denominación</th>
+                    <th>Editar</th>
+                    <th>Borrar</th>
+                </thead>
+                <tbody>
+                    <tr th:each="parada : ${listaParadas}">
+                        <td th:text="${parada.denominacion}"></td>
+                        <td>
+                            <a th:href="@{/paradas/editar/{id}(id=${parada.idparada})}"><i class="fa-solid fa-screwdriver-wrench"></i></a>
+                        </td>
+                        <td>
+                            <a th:href="@{/paradas/eliminar/{id}(id=${parada.idparada})}"><i class="fa-solid fa-trash-can"></i></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="boton">
+                <a href="/paradas/insertar">Insertar una nueva parada</a>
+            </div>
+            <a href="/mantenimiento">
+                <div class="boton">
+                    Volver
+                </div>
+            </a>
+        </div>
+    </div>
 </body>
 
 </html>
